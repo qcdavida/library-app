@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Library App</title>
+        <link rel="stylesheet" href="./style.css">
+        <script src="./script.js" defer></script>
+    </head>
+
+    <body>
+        <div class="main-container">
+            <div class="top">
+                <h1>My Library</h1>
+                <button class="open-form-btn" onclick="openForm()">Add Book</button>
+                <div class="popup-form" id="myForm">
+                    <form id="book-form">
+                        <h2>Add New Book</h2>
+                        <input type="text" id="title" name="title" placeholder="Title">
+
+                        <input type="text" name="author" id="author" placeholder="Author">
+                        
+                        <input type="number" name="pages" id="pageCount" placeholder="Pages" min="1">
+
+                        
+                            <li>
+                                <label for="readStatus" id="readLabel">Have you read this book?</label>
+                                <input type="checkbox" name="readStatus" id="readStatus">
+                            </li>
+                        
+
+                        <button type="button" id="add-book-btn">Add</button>
+                        <button type="button" class="cancel-btn" onclick="closeForm()">Close</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="bottom">
+                <table id="libraryTable">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Page Count</th>
+                            <th>Read</th>
+                            <th>Delete Book</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableTbody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

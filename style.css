@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'lato', sans-serif;
+}
+
+.main-container {
+  display: grid;
+  grid-template-rows: 150px 1fr;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.top {
+  text-align: center;
+}
+
+.top h1 {
+  padding-bottom: 15px;
+}
+
+.popup-form {
+  display: none;
+  position: fixed;
+  top: 150px;
+  right: 50px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+#book-form {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+  
+#book-form input[type=text], #book-form input[type=number]{
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+li {
+  list-style: none;
+}
+
+#readLabel, #readStatus {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px 0 22px 0;
+  font-size: 17px;
+}
+
+table, th, td {
+  border:1px solid black;
+  padding: 7px;
+  font-size: 20px;
+  letter-spacing: 0.03em;
+}
+
+thead {
+  background-color: #95A5A6;
+  text-transform: uppercase;
+}
+
+#add-book-btn{
+  display:inline-block;
+  padding:0.35em 1.2em;
+  border:0.1em solid #266DB6;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#266DB6;
+  text-align:center;
+  transition: all 0.2s;
+  font-size: 15px;
+  background-color:#FFFFFF;
+}
+
+#add-book-btn:hover{
+  color:#000000;
+  background-color:#FFFFFF;
+}
+
+.cancel-btn{
+  display:inline-block;
+  padding:0.35em 1.2em;
+  border:0.1em solid #ff6347;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#ff6347;
+  text-align:center;
+  transition: all 0.2s;
+  font-size: 15px;
+  background-color:#FFFFFF;
+}
+
+.cancel-btn:hover{
+  color:#000000;
+  background-color:#FFFFFF;
+}
+
+
+/* button style taken from https://getcssscan.com/css-buttons-examples */
+/* button-51 */
+.open-form-btn {
+  background-color: transparent;
+  border: 1px solid #266DB6;
+  box-sizing: border-box;
+  color: #00132C;
+  font-family: "Avenir Next LT W01 Bold",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  padding: 16px 23px;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.open-form-btn:hover,
+.open-form-btn:active {
+  outline: 0;
+}
+
+.open-form-btn:hover {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.open-form-btn:before {
+  background-color: #D5EDF6;
+  content: "";
+  height: calc(100% + 3px);
+  position: absolute;
+  right: -7px;
+  top: -9px;
+  transition: background-color 300ms ease-in;
+  width: 100%;
+  z-index: -1;
+}
+
+.open-form-btn:hover:before {
+  background-color: #6DCFF6;
+}
+
+.deleteBtn {
+  background-color: transparent;
+  border: 1px solid #ff4500;
+  box-sizing: border-box;
+  color: #00132C;
+  font-family: "Avenir Next LT W01 Bold",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  padding: 16px 23px;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.deleteBtn:hover,
+.deleteBtn:active {
+  outline: 0;
+}
+
+.deleteBtn:hover {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.deleteBtn:before {
+  background-color: #ffa07a;
+  content: "";
+  height: calc(100% + 3px);
+  position: absolute;
+  right: -7px;
+  top: -9px;
+  transition: background-color 300ms ease-in;
+  width: 100%;
+  z-index: -1;
+}
+
+.deleteBtn:hover:before {
+  background-color: #dc143c;
+}
+
+/*button-52 */
+.modifyBtn {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 1px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.modifyBtn:after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.modifyBtn:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+.modifyBtn2 {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 1px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.modifyBtn2:after {
+  content: "";
+  background-color: #ff6347;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.modifyBtn2:hover:after {
+  top: 0px;
+  left: 0px;
+}

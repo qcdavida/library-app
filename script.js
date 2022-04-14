@@ -1,24 +1,39 @@
 let myLibrary = [];
 let counter = 0;
 
+//Original constructor code before:
+// function Book (title, author, pages, readBook, inTable, id){
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.readBook = readBook;
+//     this.inTable = inTable;
+//     this.bookID = id;
+// }
+
+//Refactored code to make use of Class instead of constructors:
+class BookClass {
+    constructor(title, author, pages, readBook, inTable, id){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.readBook = readBook;
+        this.inTable = inTable;
+        this.bookID = id;
+    }
+}
+
 //create book objects and push add it to the library
-let firstBook = new Book('A Clockwork Orange', 'Anthony Burgess', 160, true, false, counter++);
-let secondBook = new Book('The Hitchhiker’s Guide To The Galaxy', 'Dougals Adams', 180, false, false, counter++);
-let thirdBook = new Book('The Great Gatsby', 'F. Scott Fitzgerald', 184, false, false, counter++);
+//Dummy data to fill up the table
+let firstBook = new BookClass('A Clockwork Orange', 'Anthony Burgess', 160, true, false, counter++);
+let secondBook = new BookClass('The Hitchhiker’s Guide To The Galaxy', 'Dougals Adams', 180, false, false, counter++);
+let thirdBook = new BookClass('The Great Gatsby', 'F. Scott Fitzgerald', 184, false, false, counter++);
 addBookToLibrary(firstBook);
 addBookToLibrary(secondBook);
 addBookToLibrary(thirdBook);
 addBookToTable(myLibrary);
 
-//contructor
-function Book (title, author, pages, readBook, inTable, id){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.readBook = readBook;
-    this.inTable = inTable;
-    this.bookID = id;
-}
+
 
 function addBookToLibrary(newBook){
     myLibrary.push(newBook);
@@ -34,6 +49,9 @@ function closeForm() {
     document.getElementById("myForm").style.display = "none";
 }
 
+
+//This function helps to add the book objects to the table
+//It fills in the column info with the object's states
 function addBookToTable(libraryArray){
     for(let i = 0; i < libraryArray.length; i++){
         if(libraryArray[i].inTable == true){
@@ -107,8 +125,8 @@ createBookBtn.addEventListener('click', function(){
     let bookTitle = document.getElementById('title').value;
     let author = document.getElementById('author').value;
     let pages = document.getElementById('pageCount').value;
-    let readStatus = document.getElementById('readStatus');
-    let newBook = new Book(bookTitle, author, pages, readStatus, false, counter);
+    let readStatus = document.getElementById('readStatus').checked;
+    let newBook = new BookClass(bookTitle, author, pages, readStatus, false, counter);
     counter++;
 
     addBookToLibrary(newBook);

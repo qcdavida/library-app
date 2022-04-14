@@ -101,7 +101,7 @@ function removeBookFromLibrary(bookID){
 
 //Create an event listener for the add form button. This will 
 //take the user input and create a new book object. 
-//And finally pushes the object to the library to be displayed in the table
+//And finally pushes the object to the library to be displayed in the table.
 let createBookBtn = document.getElementById('add-book-btn');
 createBookBtn.addEventListener('click', function(){
     let bookTitle = document.getElementById('title').value;
